@@ -1,5 +1,6 @@
 package com.qa.tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
@@ -81,11 +82,56 @@ private WebDriver driver;
 	}
 	
 	@Test
+	public void submissionTest() {
+		ContactPage contactPage = PageFactory.initElements(driver, ContactPage.class);
+		String name = "Leaf Cooper";
+		String email = "Leaf@email.com";
+		String title = "This is a title";
+		String desc = "Description of thing";
+		
+		contactPage.enterName(name);
+		contactPage.enterEmail(email);
+		contactPage.enterTitle(title);
+		contactPage.enterDesc(desc);
+		contactPage.clickSubmit();
+		
+		assertEquals(name,contactPage.getNameResult());
+		assertEquals(email,contactPage.getEmailResult());
+		assertEquals(title,contactPage.getTitleResult());
+		assertEquals(desc,contactPage.getDescResult());
+	}
+	
+	@Test
 	public void CheckFooter() {
 		ContactPage contactPage = PageFactory.initElements(driver, ContactPage.class);
 		
 		assertTrue(contactPage.getFooter().contains("DA, LC & MC"));
 	}
+	
+	@Test
+	public void twitterLink() {
+		ContactPage contactPage = PageFactory.initElements(driver, ContactPage.class);
+		
+		contactPage.clickTwitter();
+		assertEquals("https://twitter.com/",driver.getCurrentUrl());
+	}
+	
+	@Test 
+	public void facebookLink() {
+		ContactPage contactPage = PageFactory.initElements(driver, ContactPage.class);
+		
+		contactPage.clickFacebook();
+		assertEquals("https://www.facebook.com/",driver.getCurrentUrl());
+	}
+	
+	@Test
+	public void instagramLink() {
+		ContactPage contactPage = PageFactory.initElements(driver, ContactPage.class);
+		
+		contactPage.clickInstagram();
+		assertEquals("https://www.instagram.com/",driver.getCurrentUrl());
+	}
+
 
 	
 	@After

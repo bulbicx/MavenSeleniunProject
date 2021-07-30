@@ -1,5 +1,6 @@
 package com.qa.tests;
 
+import static org.junit.Assert.assertEquals;
 //import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -87,6 +88,30 @@ public class IndexTest {
 		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
 		
 		assertTrue(indexPage.getFooter().contains("DA, LC & MC"));
+	}
+	
+	@Test
+	public void twitterLink() {
+		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
+		
+		indexPage.clickTwitter();
+		assertEquals("https://twitter.com/",driver.getCurrentUrl());
+	}
+	
+	@Test 
+	public void facebookLink() {
+		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
+		
+		indexPage.clickFacebook();
+		assertEquals("https://www.facebook.com/",driver.getCurrentUrl());
+	}
+	
+	@Test
+	public void instagramLink() {
+		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
+		
+		indexPage.clickInstagram();
+		assertEquals("https://www.instagram.com/",driver.getCurrentUrl());
 	}
 
 	

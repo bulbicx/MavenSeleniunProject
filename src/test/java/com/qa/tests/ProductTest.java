@@ -35,13 +35,12 @@ private WebDriver driver;
 		this.driver.manage().window().maximize();
 		this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
-		this.driver.get("http://localhost:5500/webProject/html/products.html");
+		this.driver.get("http://127.0.0.1:5500/webProject/html/products.html");
 			
 	}
 	
 	@Test
 	public void HomeBtnTest() {
-		
 		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
 		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
 		
@@ -91,6 +90,41 @@ private WebDriver driver;
 	}
 	
 	@Test
+	public void twitterLink() {
+		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
+		
+		productPage.clickTwitter();
+		assertEquals("https://twitter.com/",driver.getCurrentUrl());
+	}
+	
+	@Test 
+	public void facebookLink() {
+		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
+		
+		productPage.clickFacebook();
+		assertEquals("https://www.facebook.com/",driver.getCurrentUrl());
+	}
+	
+	@Test
+	public void instagramLink() {
+		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
+		
+		productPage.clickInstagram();
+		assertEquals("https://www.instagram.com/",driver.getCurrentUrl());
+	}
+
+	
+	@Test
+	public void CheckImages() {
+		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
+		
+		assertEquals("https://images.punkapi.com/v2/keg.png",productPage.getBuzzSrc());
+		assertEquals("https://images.punkapi.com/v2/2.png",productPage.getTrashySrc());
+		assertEquals("https://images.punkapi.com/v2/keg.png", productPage.getBerlinerSrc());
+		assertEquals("https://images.punkapi.com/v2/4.png",productPage.getPilsenSrc());
+	}
+	
+	@Test
 	public void BuzzTest() {
 		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
 		BeersPage beersPage = PageFactory.initElements(driver, BeersPage.class);
@@ -102,7 +136,7 @@ private WebDriver driver;
 		//System.out.println(beersPage.getDesc());
 		assertTrue(beersPage.getName().contains("Buzz") && beersPage.getDesc().contains("A light, crisp and bitter IPA"));
 		assertTrue(beersPage.getFooter().contains("DA, LC & MC"));
-		assertEquals(beersPage.getSrc(), "https://images.punkapi.com/v2/keg.png");
+		assertEquals("https://images.punkapi.com/v2/keg.png", beersPage.getSrc());
 	}
 	
 	@Test
@@ -118,7 +152,7 @@ private WebDriver driver;
 		//System.out.println(beersPage.getDesc());
 		assertTrue(beersPage.getName().contains("Trashy Blonde") && beersPage.getDesc().contains("A titillating, neurotic, peroxide punk of a Pale Ale."));
 		assertTrue(beersPage.getFooter().contains("DA, LC & MC"));
-		assertEquals(beersPage.getSrc(), "https://images.punkapi.com/v2/2.png");
+		assertEquals("https://images.punkapi.com/v2/2.png", beersPage.getSrc());
 	}
 	
 	@Test
@@ -133,7 +167,7 @@ private WebDriver driver;
 		//System.out.println(beersPage.getDesc());
 		assertTrue(beersPage.getName().contains("Berliner Weisse") && beersPage.getDesc().contains("Japanese citrus fruit intensifies"));
 		assertTrue(beersPage.getFooter().contains("DA, LC & MC"));
-		assertEquals(beersPage.getSrc(), "https://images.punkapi.com/v2/keg.png");
+		assertEquals("https://images.punkapi.com/v2/keg.png", beersPage.getSrc());
 		
 	}
 	
@@ -149,7 +183,7 @@ private WebDriver driver;
 		//System.out.println(beersPage.getDesc());
 		assertTrue(beersPage.getName().contains("Pilsen Lager") && beersPage.getDesc().contains("Our Unleash the Yeast series was an epic experiment"));
 		assertTrue(beersPage.getFooter().contains("DA, LC & MC"));
-		assertEquals(beersPage.getSrc(), "https://images.punkapi.com/v2/4.png");
+		assertEquals("https://images.punkapi.com/v2/4.png", beersPage.getSrc());
 	}
 	
 	@Test

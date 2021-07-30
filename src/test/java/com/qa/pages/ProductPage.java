@@ -40,6 +40,27 @@ public class ProductPage {
 	@FindBy(xpath="/html/body/main/div/div/div[4]/a")
 	private WebElement pilsenBtn;
 	
+	@FindBy(xpath="/html/body/main/div/div/div[1]/img")
+	private WebElement buzzImg;
+	
+	@FindBy(xpath="/html/body/main/div/div/div[2]/img")
+	private WebElement trashyImg;
+	
+	@FindBy(xpath="/html/body/main/div/div/div[3]/img")
+	private WebElement berlinerImg;
+	
+	@FindBy(xpath="/html/body/main/div/div/div[4]/img")
+	private WebElement pilsenImg;
+	
+	@FindBy(xpath="/html/body/footer/a[1]")
+	private WebElement twitterLink;
+	
+	@FindBy(xpath="/html/body/footer/a[2]")
+	private WebElement facebookLink;
+	
+	@FindBy(xpath="/html/body/footer/a[3]")
+	private WebElement instagramLink;
+	
 	public void clickHome() {
 		homeBtn.click();
 	}
@@ -72,6 +93,18 @@ public class ProductPage {
 		pilsenBtn.click();
 	}
 	
+	public void clickTwitter() {
+		twitterLink.click();
+	}
+	
+	public void clickFacebook() {
+		facebookLink.click();
+	}
+	
+	public void clickInstagram() {
+		instagramLink.click();
+	}
+	
 	public String getHeader() {
 		return header.getText();
 	}
@@ -82,6 +115,22 @@ public class ProductPage {
 	
 	public String getFooter() {
 		return footer.getText();
+	}
+	
+	public String getBuzzSrc() {
+		return buzzImg.getAttribute("src");
+	}
+	
+	public String getTrashySrc() {
+		return trashyImg.getAttribute("src");
+	}
+	
+	public String getBerlinerSrc() {
+		return berlinerImg.getAttribute("src");
+	}
+	
+	public String getPilsenSrc() {
+		return pilsenImg.getAttribute("src");
 	}
 
 }

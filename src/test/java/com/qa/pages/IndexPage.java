@@ -25,6 +25,15 @@ public class IndexPage {
 	@FindBy(xpath="/html/body/footer/small")
 	private WebElement footer;
 	
+	@FindBy(xpath="/html/body/footer/a[1]")
+	private WebElement twitterLink;
+	
+	@FindBy(xpath="/html/body/footer/a[2]")
+	private WebElement facebookLink;
+	
+	@FindBy(xpath="/html/body/footer/a[3]")
+	private WebElement instagramLink;
+	
 	public void clickHome() {
 		homeBtn.click();
 	}
@@ -39,6 +48,18 @@ public class IndexPage {
 	
 	public void clickContact() {
 		contactBtn.click();
+	}
+	
+	public void clickTwitter() {
+		twitterLink.click();
+	}
+	
+	public void clickFacebook() {
+		facebookLink.click();
+	}
+	
+	public void clickInstagram() {
+		instagramLink.click();
 	}
 	
 	public String getTitle() {
