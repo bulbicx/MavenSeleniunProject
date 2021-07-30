@@ -90,7 +90,7 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void twitterLink() {
+	public void TwitterLink() {
 		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
 		
 		productPage.clickTwitter();
@@ -98,7 +98,7 @@ private WebDriver driver;
 	}
 	
 	@Test 
-	public void facebookLink() {
+	public void FacebookLink() {
 		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
 		
 		productPage.clickFacebook();
@@ -106,7 +106,7 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void instagramLink() {
+	public void InstagramLink() {
 		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
 		
 		productPage.clickInstagram();

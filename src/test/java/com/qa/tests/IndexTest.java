@@ -91,7 +91,7 @@ public class IndexTest {
 	}
 	
 	@Test
-	public void twitterLink() {
+	public void TwitterLink() {
 		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
 		
 		indexPage.clickTwitter();
@@ -99,7 +99,7 @@ public class IndexTest {
 	}
 	
 	@Test 
-	public void facebookLink() {
+	public void FacebookLink() {
 		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
 		
 		indexPage.clickFacebook();
@@ -107,11 +107,20 @@ public class IndexTest {
 	}
 	
 	@Test
-	public void instagramLink() {
+	public void InstagramLink() {
 		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
 		
 		indexPage.clickInstagram();
 		assertEquals("https://www.instagram.com/",driver.getCurrentUrl());
+	}
+	
+	@Test
+	public void CheckContents() {
+		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
+		
+		assertEquals("Welcome to the Home Page!", indexPage.getHeader());
+		assertEquals("Some Posts...", indexPage.getTitlePost());
+		assertTrue(indexPage.getBlogPost().contains("driven"));
 	}
 
 	

@@ -34,6 +34,15 @@ public class IndexPage {
 	@FindBy(xpath="/html/body/footer/a[3]")
 	private WebElement instagramLink;
 	
+	@FindBy(xpath="//*[@id=\"title\"]")
+	private WebElement header;
+	
+	@FindBy(xpath="//*[@id=\"titlePosts\"]")
+	private WebElement titlePost;
+	
+	@FindBy(xpath="//*[@id=\"postTitle2\"]")
+	private WebElement blogPost;
+	
 	public void clickHome() {
 		homeBtn.click();
 	}
@@ -68,6 +77,18 @@ public class IndexPage {
 	
 	public String getFooter() {
 		return footer.getText();
+	}
+	
+	public String getHeader() {
+		return header.getText();
+	}
+	
+	public String getTitlePost() {
+		return titlePost.getText();
+	}
+	
+	public String getBlogPost() {
+		return blogPost.getText();
 	}
 	
 	

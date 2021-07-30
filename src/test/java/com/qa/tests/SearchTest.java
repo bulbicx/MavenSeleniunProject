@@ -89,7 +89,7 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void twitterLink() {
+	public void TwitterLink() {
 		SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 		
 		searchPage.clickTwitter();
@@ -97,7 +97,7 @@ private WebDriver driver;
 	}
 	
 	@Test 
-	public void facebookLink() {
+	public void FacebookLink() {
 		SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 		
 		searchPage.clickFacebook();
@@ -105,7 +105,7 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void instagramLink() {
+	public void InstagramLink() {
 		SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 		
 		searchPage.clickInstagram();

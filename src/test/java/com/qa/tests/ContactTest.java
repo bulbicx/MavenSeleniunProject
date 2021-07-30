@@ -82,7 +82,7 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void submissionTest() {
+	public void SubmissionTest() {
 		ContactPage contactPage = PageFactory.initElements(driver, ContactPage.class);
 		String name = "Leaf Cooper";
 		String email = "Leaf@email.com";
@@ -109,7 +109,7 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void twitterLink() {
+	public void TwitterLink() {
 		ContactPage contactPage = PageFactory.initElements(driver, ContactPage.class);
 		
 		contactPage.clickTwitter();
@@ -117,7 +117,7 @@ private WebDriver driver;
 	}
 	
 	@Test 
-	public void facebookLink() {
+	public void FacebookLink() {
 		ContactPage contactPage = PageFactory.initElements(driver, ContactPage.class);
 		
 		contactPage.clickFacebook();
@@ -125,7 +125,7 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void instagramLink() {
+	public void InstagramLink() {
 		ContactPage contactPage = PageFactory.initElements(driver, ContactPage.class);
 		
 		contactPage.clickInstagram();
